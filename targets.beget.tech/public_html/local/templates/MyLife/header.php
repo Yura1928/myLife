@@ -4,9 +4,9 @@ global $USER;
 ?>
 <html>
 <head>
-    <?$APPLICATION->ShowHead(); ?>
+    <? $APPLICATION->ShowHead(); ?>
     <title><? $APPLICATION->ShowTitle() ?></title>
-    <link rel="stylesheet" href="<?=SITE_TEMPLATE_PATH?>/css/custom.css">
+    <link rel="stylesheet" href="<?= SITE_TEMPLATE_PATH ?>/css/custom.css">
 </head>
 <body leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" bgcolor="#FFFFFF">
 <? if ($USER->IsAdmin()) {
@@ -14,30 +14,33 @@ global $USER;
 } ?>
 <div class="header">
     <div class="header_container">
-        <div class="logo">
-            <? $APPLICATION->IncludeComponent(
-                "bitrix:main.include",
-                "",
-                Array(
-                    "AREA_FILE_SHOW" => "file",
-                    "AREA_FILE_SUFFIX" => "inc",
-                    "EDIT_TEMPLATE" => "",
-                    "PATH" => "/local/templates/MyLife/include/logo.php"
-                )
-            ); ?>
-        </div>
+        <a href="/" class="logo" style="text-decoration: none;">
+            MyLife
+        </a>
         <div class="info_header">
             <div class="support">
-                <? $APPLICATION->IncludeComponent(
-                    "bitrix:main.include",
-                    "",
-                    Array(
-                        "AREA_FILE_SHOW" => "file",
-                        "AREA_FILE_SUFFIX" => "inc",
-                        "EDIT_TEMPLATE" => "",
-                        "PATH" => "/local/templates/MyLife/include/support.php"
-                    )
-                ); ?>
+                <?php
+                $BOT_USERNAME = 'authmybots_bot';
+                $BOT_TOKEN = '1698922398:AAGQXRce7zvyReM8S3ViWolxuFHoBNRIC2A';
+                ?>
+                <script async src="https://telegram.org/js/telegram-widget.js?14"
+                        data-telegram-login="<?= $BOT_USERNAME ?>" data-size="small" data-onauth="onTelegramAuth(user)"
+                        data-request-access="write"></script>
+                <script type="text/javascript">
+                    function onTelegramAuth(user) {
+                        alert('Logged in as ' + user.first_name + ' ' + user.last_name + ' (' + user.id + (user.username ? ', @' + user.username : '') + ')');
+                    }
+                </script>
+                <!--                --><? // $APPLICATION->IncludeComponent(
+                //                    "bitrix:main.include",
+                //                    "",
+                //                    Array(
+                //                        "AREA_FILE_SHOW" => "file",
+                //                        "AREA_FILE_SUFFIX" => "inc",
+                //                        "EDIT_TEMPLATE" => "",
+                //                        "PATH" => "/local/templates/MyLife/include/support.php"
+                //                    )
+                //                ); ?>
             </div>
             <hr>
             <div class="menu">

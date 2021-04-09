@@ -1,9 +1,9 @@
 <?
 require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
-$APPLICATION->SetTitle("Программирование ");
+$APPLICATION->SetTitle("Программирование");
 ?><?$APPLICATION->IncludeComponent(
 	"bitrix:news", 
-	"flat", 
+	"web20", 
 	array(
 		"ADD_ELEMENT_CHAIN" => "N",
 		"ADD_SECTIONS_CHAIN" => "Y",
@@ -40,7 +40,7 @@ $APPLICATION->SetTitle("Программирование ");
 		"DISPLAY_PREVIEW_TEXT" => "Y",
 		"DISPLAY_TOP_PAGER" => "N",
 		"HIDE_LINK_WHEN_NO_DETAIL" => "N",
-		"IBLOCK_ID" => "1",
+		"IBLOCK_ID" => "",
 		"IBLOCK_TYPE" => "programming",
 		"INCLUDE_IBLOCK_INTO_CHAIN" => "Y",
 		"LIST_ACTIVE_DATE_FORMAT" => "d.m.Y",
@@ -56,7 +56,7 @@ $APPLICATION->SetTitle("Программирование ");
 		"MESSAGE_404" => "",
 		"META_DESCRIPTION" => "-",
 		"META_KEYWORDS" => "-",
-		"NEWS_COUNT" => "10",
+		"NEWS_COUNT" => "9",
 		"PAGER_BASE_LINK_ENABLE" => "N",
 		"PAGER_DESC_NUMBERING" => "N",
 		"PAGER_DESC_NUMBERING_CACHE_TIME" => "36000",
@@ -85,7 +85,7 @@ $APPLICATION->SetTitle("Программирование ");
 		"USE_RSS" => "N",
 		"USE_SEARCH" => "N",
 		"USE_SHARE" => "N",
-		"COMPONENT_TEMPLATE" => "flat",
+		"COMPONENT_TEMPLATE" => "web20",
 		"TAGS_CLOUD_ELEMENTS" => "150",
 		"PERIOD_NEW_TAGS" => "",
 		"DISPLAY_AS_RATING" => "rating",
